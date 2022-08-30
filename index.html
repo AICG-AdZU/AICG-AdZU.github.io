@@ -2,18 +2,33 @@
 <html lang="en">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AICG</title>
 </head>
 <body>
-   <a href="img.html"><h1>> AICG is back...<div id="dots"></div></h1></a> 
+<a href="img.html"><h1 id="demo" onload=typeWriter()>>> </h1></a>
 </body>
 <script>
+    var i = 0;
+    var txt = 'AICG is coming back...'; /* The text */
+    var speed = 110; /* The speed/duration of the effect in milliseconds */
+    $(document).ready(function(){
 
+        setTimeout(typeWriter, 1000)
+    })
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
 </script>
 </html>
